@@ -1,7 +1,6 @@
 from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager, Shell
-from edubackend.main import app
-from common.models import db
+from flask_script import Manager
+from main import app
 from common.models.models import *
 
 manage = Manager(app)
