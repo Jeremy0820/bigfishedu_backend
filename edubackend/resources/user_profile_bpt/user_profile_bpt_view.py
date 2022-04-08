@@ -51,7 +51,7 @@ class Login(Resource):
             # 用户不存在, 落库, 生成token返回
             recommend_code = str(uuid1())
             new_user = User(nick_name=nick_name, avatar=avatar_url, session_key=session_key, openid=openid,
-                            recommend_code=recommend_code)
+                            recommend_code=recommend_code, coin=100, score=0.1)
             db.session.add(new_user)
             db.session.flush()
             user_id = new_user.id
