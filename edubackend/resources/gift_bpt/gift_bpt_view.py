@@ -50,23 +50,30 @@ class GiftDetail(Resource):
                 'data': []
             }
         gift = Gift.query.filter_by(id=gift_id).first()
-        collection_num = len(gift.users)
-        swiperList = [{"id": gift.banner.split(',').index(item), "img": item} for item in gift.banner.split(',')]
-        imgs = [item for item in gift.pics.split(',')]
-        return_data = {
-            "msg": "ok",
-            "code": 200,
-            "data": {
-                "id": gift.id,
-                "swiperList": swiperList,
-                "title": gift.gift_title,
-                "price": gift.price,
-                "brief": 'yyyyy',
-                "imgs": imgs,
-                "notice": gift.notice,
-                "collection_num": collection_num
+        if gift:
+            collection_num = len(gift.users)
+            swiperList = [{"id": gift.banner.split(',').index(item), "img": item} for item in gift.banner.split(',')]
+            imgs = [item for item in gift.pics.split(',')]
+            return_data = {
+                "msg": "ok",
+                "code": 200,
+                "data": {
+                    "id": gift.id,
+                    "swiperList": swiperList,
+                    "title": gift.gift_title,
+                    "price": gift.price,
+                    "brief": 'yyyyy',
+                    "imgs": imgs,
+                    "notice": gift.notice,
+                    "collection_num": collection_num
+                }
             }
-        }
+        else:
+            return_data = {
+                "msg": "ok",
+                "code": 200,
+                "data": {}
+            }
         return return_data
 
 
