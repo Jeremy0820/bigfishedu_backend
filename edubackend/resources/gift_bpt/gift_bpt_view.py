@@ -200,10 +200,13 @@ class GiftExchange(Resource):
             }
         user = User.query.filter_by(id=user_id).first()
         gift = Gift.query.filter_by(id=gid).first()
-        if user and gift and user.score>=gift.price:
+        if user and gift and user.score >= gift.price:
             order_num = str(uuid.uuid1())
             order = Order(order_number=order_num, user_id=user.id, gift_id=gift.id, status=0)
-            user.coin = user.coin - gift.price
+            print(111111, user.coin)
+            print(222222, gift.price)
+            user.score = user.score - gift.price
+            print(333333, user.coin)
             db.session.add(order)
             db.session.add(user)
             db.session.commit()
