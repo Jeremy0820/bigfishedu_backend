@@ -349,11 +349,18 @@ class NoticeView(Resource):
         type = args.get("type")
         if type:
             notice = Notice.query.filter_by(type=type, status=1).first()
-            return {
-                "msg": "ok",
-                "code": 200,
-                "data": {"notice": notice.msg}
-            }
+            if notice:
+                return {
+                    "msg": "ok",
+                    "code": 200,
+                    "data": {"notice": notice.msg}
+                }
+            else:
+                return {
+                    "msg": "request notice fail",
+                    "code": 201,
+                    "data": {}
+                }
         else:
             return {
                 "msg": "request notice fail",
