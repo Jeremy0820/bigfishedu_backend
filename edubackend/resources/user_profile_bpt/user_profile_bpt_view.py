@@ -58,7 +58,7 @@ class Login(Resource):
             db.session.commit()
             token = generate_jwt({"user_id": user_id, "openid": openid})
             open_id = new_user.openid
-            is_recommended = user.is_recommended
+            is_recommended = new_user.is_recommended
         return {
             "msg": "ok",
             "code": 200,
