@@ -124,7 +124,7 @@ class CourseInfo(Resource):
 
         return_data = {
             "course_name": course.course_title,
-            "course_cate": course.category,
+            "course_version": course.version,
             "course_grade": course.grade,
             "collect_num": collect_num,
             "content": content,
