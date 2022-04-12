@@ -465,6 +465,9 @@ class CoinToScore(Resource):
 
 
 class GiftCollections(Resource):
+    """
+    礼品收藏列表接口
+    """
     def __init__(self):
         self.parser = reqparse.RequestParser()
         self.parser.add_argument("token", location="headers")
