@@ -5,7 +5,7 @@ class DefaultConfig(object):
     """
     FLASK默认配置
     """
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://0820@ABcd:root@127.0.0.1:3306/bigfish_edu'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:0820&ABcd:root@127.0.0.1:3306/bigfish_edu'
     SQLALCHEMY_TRACK_MODIFICATIONS = False  # 追踪数据的修改信号
     SQLALCHEMY_ECHO = False
 
