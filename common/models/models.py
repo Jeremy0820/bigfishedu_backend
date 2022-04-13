@@ -92,6 +92,7 @@ class Gift(db.Model):
     status = db.Column(db.Integer, doc="礼物状态, 0:无货, 1:正常, -1:下架")
     notice = db.Column(db.String(255), doc="提示信息")
     pics = db.Column(db.Text, doc="详情图片")
+    link = db.Column(db.Text, doc="pdd链接")
 
     order = db.relationship("Order", backref="gift")
 
