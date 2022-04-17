@@ -221,9 +221,10 @@ class CourseCollection(Resource):
                 course_title = course.course_title
                 image = course.cover
                 collect = len(course.users)
-                date = str(course.create_time)
-                data.append({"id": id, "course_title": course_title, "image": image, "collect": collect, "date": date})
-        except:
+                # date = str(course.create_time)
+                data.append({"id": id, "course_title": course_title, "image": image, "collect": collect, "date": ''})
+        except Exception as e:
+            print(e)
             msg = "获取收藏失败!"
             data = []
         return {
