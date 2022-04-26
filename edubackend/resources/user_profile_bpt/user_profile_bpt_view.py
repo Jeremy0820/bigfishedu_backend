@@ -124,8 +124,8 @@ class MoneyHelpView(Resource):
             "data": {
                 "msg": "为什么会有打赏功能?本小程序为给同学们提供优质的教学资源,减少资源搜集的时间的个性化定制课堂. 小程序的运行和维护以及内部资源, 鼓励大家学习的小礼品和红包都是程序员小哥哥自掏腰包的.为了减小程序员小哥哥的经济压力, 希望您能够在享受优质教学资源的同时, 如果经济条件允许的情况下, 赞助小哥哥一杯暖心的咖啡.",
                 "tip": "点击下方的收款码, 保存与手机上, 使用微信或支付宝扫码即可赞助(量力而行哦)",
-                "wechatCode": "http://r8pyi761n.hn-bkt.clouddn.com/wxcode.png",
-                "mayiCode": "http://r8pyi761n.hn-bkt.clouddn.com/zfbcode.png"
+                "wechatCode": "https://bigfish-1311070454.cos.ap-beijing.myqcloud.com/other/wechatpay.png",
+                "mayiCode": "https://bigfish-1311070454.cos.ap-beijing.myqcloud.com/other/mayipay.jpg"
             }
         }
 
