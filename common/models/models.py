@@ -35,6 +35,7 @@ class User(db.Model):
     total_coin = db.Column(db.BigInteger, doc="用户累计金币数")
     recommend_code = db.Column(db.String(255), doc="用户推荐唯一码")
     is_recommended = db.Column(db.Integer, doc="是否被推荐, 1:被推荐过, 0:未被推荐过")
+    is_vip = db.Column(db.Integer, default=0, doc="0:普通用户; 1:月VIP; 2:季度VIP; 3:年VIP会员; 4:终身会员")
 
     adress = db.relationship("Adress", backref="user")
     spirit = db.relationship("Spirit", backref="user")
@@ -59,6 +60,7 @@ class Course(db.Model):
     recommend = db.Column(db.Integer, doc="是否推荐, 1:推荐, 0:不推荐", default=0)
     cover = db.Column(db.String(255), doc="封面图片外链")
     is_banner = db.Column(db.Integer, doc="banner标识: 1是banner图, 0不是banner图")
+    banner_pic = db.Column(db.Text, doc="banner图连接")
     status = db.Column(db.Integer, doc="课程状态, 0:下架, 1:上架")
 
     chapter = db.relationship("Chapter", backref="course")
