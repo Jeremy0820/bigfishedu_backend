@@ -35,7 +35,7 @@ class Banner(Resource):
         return_data = [
             {
                 "id": item.id,
-                "image": item.cover,
+                "image": item.banner_pic,
                 "course_title": item.course_title,
                 "wid": item.id
             } for item in banner_data]
